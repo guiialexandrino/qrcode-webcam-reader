@@ -1,0 +1,93 @@
+/*Importando fonte*/
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat:wght@400;700&family=Noto+Color+Emoji&display=swap');
+
+:root {
+  --bgColor: #e3e3e3;
+  --primaryFontColor: #ee6f57;
+  --secondaryFontColor: #cb3737;
+}
+
+* {
+  font-family: 'Mansalva', sans-serif;
+}
+
+body, h1, h2, h3, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #8360c3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  letter-spacing: 0.3rem;
+  font-size: 3rem;
+  padding: 10px;
+  color: white;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.title::before {
+  content: '🖥️';
+  padding-right: 20px;
+  font-family: 'Noto Color Emoji', sans-serif;  
+}
+
+button {
+  display: block;
+  height: 40px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: solid 1px white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#qr-code-result, strong {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+strong {
+  font-weight: 900;
+}
+
+button:hover {
+  background-color: transparent;
+  color: white
+}
+
+button:active {
+  transform: translateY(5px);
+}
+
+#webcam-container {
+  width: 800px;
+  height: 0px;
+  display: flex;
+  justify-content: center;
+  transition: height 0.5s ease;
+}
+
+#webcam-container video, #webcam-container canvas {
+  width: 100%;
+}
