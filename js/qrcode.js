@@ -1,5 +1,5 @@
 import { webcamContainer, canvas, qrCodeResult } from './interface.js'
-import { drawLine, buttonAppears } from './utils.js';
+import { drawLine, showButton } from './utils.js';
 
 let interval = null
 
@@ -34,7 +34,7 @@ export const initQrCode = async () => {
 
           qrCodeResult.innerHTML = `QRCode encontrado:  <strong>${code.data}</strong>`
           disconnectWebCam()
-          buttonAppears(initQrCode)
+          showButton(initQrCode)
         }
       }
     }, 80)    
