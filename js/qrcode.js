@@ -17,8 +17,7 @@ export const initQrCode = async () => {
     webcamContainer.style.height = '600px'
 
     interval = setInterval(() => {
-      canvas.width = videoFromWebCam.videoWidth
-      canvas.height = videoFromWebCam.videoHeight
+      [canvas.width, canvas.height] = [ videoFromWebCam.videoWidth, videoFromWebCam.videoHeight]
 
       if (canvas.width && canvas.height) {
         const canvasContext = canvas.getContext('2d')
@@ -28,10 +27,10 @@ export const initQrCode = async () => {
         const code = jsQR(image.data, image.width, image.height)
 
         if (code?.data) {
-          drawLine(canvasContext, code.location.topLeftCorner, code.location.topRightCorner, '#FF3B58')
-          drawLine(canvasContext, code.location.topRightCorner, code.location.bottomRightCorner, '#FF3B58')
-          drawLine(canvasContext, code.location.bottomRightCorner, code.location.bottomLeftCorner, '#FF3B58')
-          drawLine(canvasContext, code.location.bottomLeftCorner, code.location.topLeftCorner, '#FF3B58')
+          drawLine(canvasContext, code.location.topLeftCorner, code.location.topRightCorner)
+          drawLine(canvasContext, code.location.topRightCorner, code.location.bottomRightCorner)
+          drawLine(canvasContext, code.location.bottomRightCorner, code.location.bottomLeftCorner)
+          drawLine(canvasContext, code.location.bottomLeftCorner, code.location.topLeftCorner)
 
           qrCodeResult.innerHTML = `QRCode encontrado:  <strong>${code.data}</strong>`
           disconnectWebCam()

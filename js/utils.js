@@ -1,6 +1,6 @@
 import { canvas, webcamContainer, qrCodeResult } from "./interface.js"
 
-export const drawLine = (canvasContext, begin, end, color) => {
+export const drawLine = (canvasContext, begin, end, color = '#FF3B58') => {
   canvasContext.beginPath()
   canvasContext.moveTo(begin.x, begin.y)
   canvasContext.lineTo(end.x, end.y)
@@ -26,5 +26,5 @@ export const buttonAppears = (event) => {
       event()
     })
     webcamContainer.appendChild(button)
-  }, 1000)
+  }, 1200)
 }
